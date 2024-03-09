@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Hello, world!</title>
+    <style>
+        body {
+            overflow: hidden
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            z-index: 99;
+            /* makes sure it stays on top */
+        }
+
+        #camera {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            /* centers the loading animation horizontally one the screen */
+            top: 50%;
+            /* centers the loading animation vertically one the screen */
+            background-image: url(https://svgshare.com/i/6js.svg);
+            /* path to your loading animation */
+            /*background-image: url(loading-loader.gif); for local image */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: -150px 0 0 -150px
+                /* is width and height divided by two */
+        }
+    </style>
+</head>
+
+<body onload="myFunction()">
+
+    <div id="preloader">
+        <div id="camera"></div>
+    </div>
+
+    <div style="display:none;" id="myDiv">
+        <h2>Tada!</h2>
+        <p>Some text in my newly loaded page..</p>
+    </div>
+
+
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 2000);
+        }
+
+        function showPage() {
+            document.getElementById("myDiv").style.display = "block";
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("camera").style.display = "none";
+
+        }
+    </script>
+
+</body>
+
+</html>
